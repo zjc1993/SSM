@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SSM.dao.SysUserMapper">
+    <select id="findSysUserById" resultType="sysUser" parameterType="String">
+        select
+          ID AS id,
+          USERNAME as userName,
+          USERTRUENAME as userTrueName,
+          DELETEFLAG as deleteFlag
+        from
+          SYS_USER
+        where
+          ID = #{id}
+    </select>
+
+    <select id="findAllUser" resultType="sysUser" parameterType="String">
+        select
+          ID AS id,
+          USERNAME as userName,
+          USERTRUENAME as userTrueName,
+          DELETEFLAG as deleteFlag
+        from
+          SYS_USER
+    </select>
+</mapper>
